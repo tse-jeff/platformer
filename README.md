@@ -13,7 +13,7 @@
 - 3 levels
 - ultimate goal to collect a scroll
 
-### Workload Split
+### First Week Workload Split
 Jeffery - art
 Ivan - character movement/ slash attack
 Aditya - collectables throwing
