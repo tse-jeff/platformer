@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D _rigidbody;
 
     public bool grounded = false;
+    public bool facingRight = true;
     float xSpeed = 0;
 
     void Start()
@@ -24,6 +25,14 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate() {
         xSpeed = Input.GetAxis("Horizontal") * speed;
         _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
+        if(xSpeed < 0 && facingRight == true)
+        {
+            Flip();
+        }
+        if(xSpeed > 0 && facingRight == false)
+        {
+            Flip();
+        }
     }
 
     void Update()
@@ -46,5 +55,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
+    
+    void Flip(){
+        Vector3 currDirection = gameObject.transform.localScale;
+        currDirection.x *= -1;
+        gameObject.transform.localScale = currDirection;
+        facingRight =! facingRight;
+    }
 }
