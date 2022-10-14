@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform feetTrans;
     public LayerMask groundLayer;
     public Transform wallGrabPoint;
+    public Animator animtor;
 
     public int speed = 5;
     public int jumpForce = 300;
@@ -37,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         xSpeed = Input.GetAxis("Horizontal") * speed;
+        animtor.SetFloat("speed", Mathf.Abs(xSpeed));
         _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
         if (xSpeed < 0 && PublicVars.facingRight == true)
         {
@@ -50,15 +52,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        grounded = Physics2D.OverlapCircle(feetTrans.position, .1f, groundLayer);
+
+        if (grounded) { animtor.SetBool("isJumping", false); }
+
         if(wallJumpCounter <= 0)
         {
-            grounded = Physics2D.OverlapCircle(feetTrans.position, .1f, groundLayer);
-
             if (grounded)
             {
                 airjumps = 1;
                 if (Input.GetButtonDown("Jump"))
                 {
+                    animtor.SetBool("isJumping", true);
                     _rigidbody.AddForce(new Vector2(0, jumpForce));
                 }
             }
@@ -66,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetButtonDown("Jump"))
                 {
+                    animtor.SetBool("isJumping", true);
                     _rigidbody.AddForce(new Vector2(0, jumpForce));
                     airjumps--;
                 }
