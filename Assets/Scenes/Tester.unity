@@ -1872,6 +1872,14 @@ PrefabInstance:
       propertyPath: StarText
       value: 
       objectReference: {fileID: 679333418}
+    - target: {fileID: 1002753153057636510, guid: 7443b41f5f27a804c9b02be61f651ca1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 93cf983a8f8f9ad408c2bf889afb20d4, type: 3}
+    - target: {fileID: 1002753153057636510, guid: 7443b41f5f27a804c9b02be61f651ca1, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1002753153057636511, guid: 7443b41f5f27a804c9b02be61f651ca1, type: 3}
       propertyPath: m_RootOrder
       value: 3
