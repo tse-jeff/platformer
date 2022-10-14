@@ -12,5 +12,10 @@ public class Collectibles : MonoBehaviour
             Destroy(other.gameObject);
             PublicVars.stars += 1;
         }
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            Destroy(other.gameObject);
+            PublicVars.score += 10;
+        }
     }
 }
