@@ -18,6 +18,8 @@ public class EnemyCombat : MonoBehaviour
         {
             gameObject.tag = "Dead";
             //Add death Animation
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
             StartCoroutine(DestroyEnemy());
         }
         
