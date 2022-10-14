@@ -16,7 +16,7 @@ public class LifeSpan : MonoBehaviour
         {
             other.GetComponent<EnemyCombat>().TakeRangedDamage();
         }
-        if(other.gameObject.tag != "Player")
+        if(other.gameObject.tag != "Player" && other.gameObject.tag != "Dead")
         {
             Destroy(gameObject);
         }
