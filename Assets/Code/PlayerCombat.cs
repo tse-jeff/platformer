@@ -23,6 +23,8 @@ public class PlayerCombat : MonoBehaviour
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
             PublicVars.playerHealth = 3;
+            PublicVars.facingRight = true;
+            PublicVars.stars = 3;
 
         }
 
