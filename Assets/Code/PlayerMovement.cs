@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public TextMeshProUGUI StarText;
     public Transform feetTrans;
     public LayerMask groundLayer;
 
@@ -65,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
             if (PublicVars.stars != 0)
             {
                 PublicVars.stars -= 1;
+                StarText.text = "STARS: " + PublicVars.stars;
                 GameObject collectedStar = Instantiate(Stars, transform.position, transform.rotation);
                 if (facingRight)
                 {
