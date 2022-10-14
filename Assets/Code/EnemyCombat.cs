@@ -58,10 +58,4 @@ public class EnemyCombat : MonoBehaviour
     {
         health -= 5;
     }
-
-    public int getHealth()
-    {
-        return health;
-    }
-
 }
