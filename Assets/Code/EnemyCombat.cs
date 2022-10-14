@@ -43,7 +43,7 @@ public class EnemyCombat : MonoBehaviour
 
     IEnumerator DestroyEnemy()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Destroy(this.gameObject);
         
     }
