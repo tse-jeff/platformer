@@ -72,7 +72,7 @@ public class PlayerCombat : MonoBehaviour
 
     }
     
-    private void OnDrawGizmosSelected() {
-        Gizmos.DrawWireSphere(attackPoint.position, meleeRange);
-    }
+    //private void OnDrawGizmosSelected() {
+    //    Gizmos.DrawWireSphere(attackPoint.position, meleeRange);
+    //}
 }

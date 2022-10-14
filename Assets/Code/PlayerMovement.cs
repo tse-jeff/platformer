@@ -13,8 +13,7 @@ public class PlayerMovement : MonoBehaviour
     //private float wallJumpCounter;
     //public Transform wallGrabPoint;
     //private bool canGrab, isGrabbing;
-    
-    public TextMeshProUGUI StarText;
+
 
     public Transform feetTrans;
     public LayerMask groundLayer;
