@@ -16,6 +16,7 @@ public class EnemyCombat : MonoBehaviour
     {
         if(health < 1)
         {
+            gameObject.tag = "Dead";
             //Add death Animation
             StartCoroutine(DestroyEnemy());
         }
@@ -48,8 +49,6 @@ public class EnemyCombat : MonoBehaviour
     }
 
 
-
-
     public void TakeMeleeDamage()
     {
         health -= 1;
@@ -59,5 +58,4 @@ public class EnemyCombat : MonoBehaviour
     {
         health -= 5;
     }
-
 }
