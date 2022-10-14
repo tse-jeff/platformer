@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public TextMeshProUGUI StarText;
     public Transform feetTrans;
     public LayerMask groundLayer;
 
@@ -17,19 +19,23 @@ public class PlayerMovement : MonoBehaviour
     public bool facingRight = true;
     float xSpeed = 0;
 
+    public GameObject Stars;
+    int starForce = 900;
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         xSpeed = Input.GetAxis("Horizontal") * speed;
         _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
-        if(xSpeed < 0 && facingRight == true)
+        if (xSpeed < 0 && facingRight == true)
         {
             Flip();
         }
-        if(xSpeed > 0 && facingRight == false)
+        if (xSpeed > 0 && facingRight == false)
         {
             Flip();
         }
@@ -39,27 +45,47 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded = Physics2D.OverlapCircle(feetTrans.position, .1f, groundLayer);
 
-        if(grounded){
+        if (grounded)
+        {
             airjumps = 1;
-            if(Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump"))
             {
                 _rigidbody.AddForce(new Vector2(0, jumpForce));
             }
         }
-        else if(airjumps > 0)
+        else if (airjumps > 0)
         {
-            if(Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump"))
             {
                 _rigidbody.AddForce(new Vector2(0, jumpForce));
                 airjumps--;
             }
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (PublicVars.stars != 0)
+            {
+                PublicVars.stars -= 1;
+                StarText.text = "STARS: " + PublicVars.stars;
+                GameObject collectedStar = Instantiate(Stars, transform.position, transform.rotation);
+                if (facingRight)
+                {
+                    collectedStar.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 1) * starForce);
+                }
+                else
+                {
+                    collectedStar.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1, 1) * starForce);
+                }
+            }
+        }
     }
-    
-    void Flip(){
+
+    void Flip()
+    {
         Vector3 currDirection = gameObject.transform.localScale;
         currDirection.x *= -1;
         gameObject.transform.localScale = currDirection;
-        facingRight =! facingRight;
+        facingRight = !facingRight;
     }
 }
