@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - NinjaStar
+  - Coin
   layers:
   - Default
   - TransparentFX
