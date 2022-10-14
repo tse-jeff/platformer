@@ -6,33 +6,36 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public TextMeshProUGUI StarText;
-    public Rigidbody2D theRB;
+    
+    //public Rigidbody2D theRB;
+    //private float gravityStore;
+    //public float wallJumpTime = .2f;
+    //private float wallJumpCounter;
+    //public Transform wallGrabPoint;
+    //private bool canGrab, isGrabbing;
+
 
     public Transform feetTrans;
     public LayerMask groundLayer;
-    public Transform wallGrabPoint;
     public Animator animtor;
 
     public int speed = 5;
     public int jumpForce = 300;
     public int airjumps = 1;
-    private float gravityStore;
-    public float wallJumpTime = .2f;
-    private float wallJumpCounter;
+    
 
     Rigidbody2D _rigidbody;
 
     public bool grounded = false;
 
-    private bool canGrab, isGrabbing;
+
 
     float xSpeed = 0;
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        gravityStore = theRB.gravityScale;  
+        //gravityStore = theRB.gravityScale;  
     }
 
     void FixedUpdate()
@@ -53,31 +56,30 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         grounded = Physics2D.OverlapCircle(feetTrans.position, .1f, groundLayer);
+        if (grounded)
+        {
+            animtor.SetBool("isJumping", false);
+            airjumps = 1;
+            if (Input.GetButtonDown("Jump"))
+            {
+                animtor.SetBool("isJumping", true);
+                _rigidbody.AddForce(new Vector2(0, jumpForce));
+            }
+        }
+        else if (airjumps > 0)
+        {
+            if (Input.GetButtonDown("Jump"))
+            {
+                animtor.SetBool("isJumping", true);
+                _rigidbody.AddForce(new Vector2(0, jumpForce));
+                airjumps--;
+            }
+        }
 
-        if (grounded) { animtor.SetBool("isJumping", false); }
-
+        //Incomplete Wall Jump Codes
+        /*
         if(wallJumpCounter <= 0)
         {
-            if (grounded)
-            {
-                airjumps = 1;
-                if (Input.GetButtonDown("Jump"))
-                {
-                    animtor.SetBool("isJumping", true);
-                    _rigidbody.AddForce(new Vector2(0, jumpForce));
-                }
-            }
-            else if (airjumps > 0)
-            {
-                if (Input.GetButtonDown("Jump"))
-                {
-                    animtor.SetBool("isJumping", true);
-                    _rigidbody.AddForce(new Vector2(0, jumpForce));
-                    airjumps--;
-                }
-            }
-
-
             //Handle Wall Jumping
             canGrab = Physics2D.OverlapCircle(wallGrabPoint.position, 0.2f, groundLayer);
 
@@ -113,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
         {
             wallJumpCounter -= Time.deltaTime;
         }
+        */
     }
 
     void Flip()

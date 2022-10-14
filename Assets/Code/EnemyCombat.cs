@@ -18,6 +18,8 @@ public class EnemyCombat : MonoBehaviour
         {
             gameObject.tag = "Dead";
             //Add death Animation
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
             StartCoroutine(DestroyEnemy());
         }
         
@@ -43,7 +45,7 @@ public class EnemyCombat : MonoBehaviour
 
     IEnumerator DestroyEnemy()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Destroy(this.gameObject);
         
     }

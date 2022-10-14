@@ -10,7 +10,7 @@ public class PlayerCombat : MonoBehaviour
     public TextMeshProUGUI StarText;
 
     public Transform attackPoint;
-    public float meleeRange = 0.52f;
+    public float meleeRange = 0.91f;
     public LayerMask enemyLayers;
 
     public GameObject Stars;
@@ -71,4 +71,8 @@ public class PlayerCombat : MonoBehaviour
         }
 
     }
+    
+    //private void OnDrawGizmosSelected() {
+    //    Gizmos.DrawWireSphere(attackPoint.position, meleeRange);
+    //}
 }
