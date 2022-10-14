@@ -1705,7 +1705,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.32529372, g: 0.8113208, b: 0.3817954, a: 1}
   m_FlipX: 0
@@ -1929,7 +1929,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e5321759dfee1a4fb79f25da8e6f8d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StarText: {fileID: 679333418}
   feetTrans: {fileID: 1878316813}
   groundLayer:
     serializedVersion: 2
@@ -1938,8 +1937,6 @@ MonoBehaviour:
   jumpForce: 300
   airjumps: 1
   grounded: 0
-  facingRight: 1
-  Stars: {fileID: 2416402079687922152, guid: bee84f34b29ed6a48b300f9fc3594d86, type: 3}
 --- !u!114 &2118094838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1952,11 +1949,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a781c2fbb2fc99a4cb34a46a890e8c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StarText: {fileID: 679333418}
   attackPoint: {fileID: 224469995}
   meleeRange: 0.52
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
+  Stars: {fileID: 2416402079687922152, guid: bee84f34b29ed6a48b300f9fc3594d86, type: 3}
 --- !u!114 &2118094839
 MonoBehaviour:
   m_ObjectHideFlags: 0
