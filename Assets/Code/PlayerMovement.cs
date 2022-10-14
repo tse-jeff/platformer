@@ -5,8 +5,10 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     public TextMeshProUGUI StarText;
     public Rigidbody2D theRB;
+
     public Transform feetTrans;
     public LayerMask groundLayer;
     public Transform wallGrabPoint;
@@ -21,12 +23,10 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D _rigidbody;
 
     public bool grounded = false;
-    public bool facingRight = true;
-    private bool canGrab, isGrabbing;
-    float xSpeed = 0;
 
-    public GameObject Stars;
-    int starForce = 900;
+    private bool canGrab, isGrabbing;
+
+    float xSpeed = 0;
 
     void Start()
     {
@@ -38,11 +38,11 @@ public class PlayerMovement : MonoBehaviour
     {
         xSpeed = Input.GetAxis("Horizontal") * speed;
         _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
-        if (xSpeed < 0 && facingRight == true)
+        if (xSpeed < 0 && PublicVars.facingRight == true)
         {
             Flip();
         }
-        if (xSpeed > 0 && facingRight == false)
+        if (xSpeed > 0 && PublicVars.facingRight == false)
         {
             Flip();
         }
@@ -71,23 +71,6 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            if (Input.GetMouseButtonDown(1))
-            {
-                if (PublicVars.stars != 0)
-                {
-                    PublicVars.stars -= 1;
-                    StarText.text = "STARS: " + PublicVars.stars;
-                    GameObject collectedStar = Instantiate(Stars, transform.position, transform.rotation);
-                    if (facingRight)
-                    {
-                        collectedStar.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 1) * starForce);
-                    }
-                    else
-                    {
-                        collectedStar.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1, 1) * starForce);
-                    }
-                }
-            }
 
             //Handle Wall Jumping
             canGrab = Physics2D.OverlapCircle(wallGrabPoint.position, 0.2f, groundLayer);
@@ -124,8 +107,6 @@ public class PlayerMovement : MonoBehaviour
         {
             wallJumpCounter -= Time.deltaTime;
         }
-
- 
     }
 
     void Flip()
@@ -133,6 +114,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 currDirection = gameObject.transform.localScale;
         currDirection.x *= -1;
         gameObject.transform.localScale = currDirection;
-        facingRight = !facingRight;
+        PublicVars.facingRight = !PublicVars.facingRight;
     }
 }
