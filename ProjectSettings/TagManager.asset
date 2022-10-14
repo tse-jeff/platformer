@@ -6,8 +6,6 @@ TagManager:
   tags:
   - NinjaStar
   - Coin
-  - Enemy
-  - Dead
   layers:
   - Default
   - TransparentFX

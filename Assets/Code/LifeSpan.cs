@@ -11,14 +11,8 @@ public class LifeSpan : MonoBehaviour
         Destroy(gameObject, lifeTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.tag == "Enemy")
-        {
-            other.GetComponent<EnemyCombat>().TakeRangedDamage();
-        }
-        if(other.gameObject.tag != "Player" && other.gameObject.tag != "Dead")
-        {
-            Destroy(gameObject);
-        }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Destroy(gameObject);
     }
 }

@@ -5,6 +5,7 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public TextMeshProUGUI StarText;
     public Transform feetTrans;
     public LayerMask groundLayer;
 
@@ -15,7 +16,11 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D _rigidbody;
 
     public bool grounded = false;
+    public bool facingRight = true;
     float xSpeed = 0;
+
+    public GameObject Stars;
+    int starForce = 900;
 
     void Start()
     {
@@ -26,11 +31,11 @@ public class PlayerMovement : MonoBehaviour
     {
         xSpeed = Input.GetAxis("Horizontal") * speed;
         _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
-        if (xSpeed < 0 && PublicVars.facingRight == true)
+        if (xSpeed < 0 && facingRight == true)
         {
             Flip();
         }
-        if (xSpeed > 0 && PublicVars.facingRight == false)
+        if (xSpeed > 0 && facingRight == false)
         {
             Flip();
         }
@@ -56,6 +61,24 @@ public class PlayerMovement : MonoBehaviour
                 airjumps--;
             }
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (PublicVars.stars != 0)
+            {
+                PublicVars.stars -= 1;
+                StarText.text = "STARS: " + PublicVars.stars;
+                GameObject collectedStar = Instantiate(Stars, transform.position, transform.rotation);
+                if (facingRight)
+                {
+                    collectedStar.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 1) * starForce);
+                }
+                else
+                {
+                    collectedStar.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1, 1) * starForce);
+                }
+            }
+        }
     }
 
     void Flip()
@@ -63,6 +86,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 currDirection = gameObject.transform.localScale;
         currDirection.x *= -1;
         gameObject.transform.localScale = currDirection;
-        PublicVars.facingRight = !PublicVars.facingRight;
+        facingRight = !facingRight;
     }
 }
