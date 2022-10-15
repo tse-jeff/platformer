@@ -12,7 +12,7 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     public float meleeRange = 0.91f;
     public LayerMask enemyLayers;
-
+    public Animator animator;
     public GameObject Stars;
     int starForce = 900;
 
@@ -31,12 +31,14 @@ public class PlayerCombat : MonoBehaviour
         //Left click
         if (Input.GetMouseButtonDown(0))
         {
+            animator.SetTrigger("melee");
             MeleeAttack();
         }
 
         //Right click
         else if (Input.GetMouseButtonDown(1))
         {
+            animator.SetTrigger("throw");
             RangedAttack();
         }
     }

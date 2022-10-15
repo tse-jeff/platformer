@@ -1542,6 +1542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   canAttack: 1
+  ninja: {fileID: 1832467198}
 --- !u!50 &691258196
 Rigidbody2D:
   serializedVersion: 4
@@ -2689,9 +2690,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2416402079687922152, guid: bee84f34b29ed6a48b300f9fc3594d86, type: 3}
     - target: {fileID: 1002753153057636504, guid: 7443b41f5f27a804c9b02be61f651ca1, type: 3}
+      propertyPath: animtor
+      value: 
+      objectReference: {fileID: 1832467195}
+    - target: {fileID: 1002753153057636504, guid: 7443b41f5f27a804c9b02be61f651ca1, type: 3}
       propertyPath: StarText
       value: 
       objectReference: {fileID: 380661004}
+    - target: {fileID: 1002753153057636504, guid: 7443b41f5f27a804c9b02be61f651ca1, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1832467195}
     - target: {fileID: 1002753153057636504, guid: 7443b41f5f27a804c9b02be61f651ca1, type: 3}
       propertyPath: meleeRange
       value: 0.91
@@ -2729,6 +2738,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1002753153057636507, guid: 7443b41f5f27a804c9b02be61f651ca1, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1832467195}
+    - target: {fileID: 1002753153057636507, guid: 7443b41f5f27a804c9b02be61f651ca1, type: 3}
       propertyPath: jumpForce
       value: 700
       objectReference: {fileID: 0}
@@ -2750,7 +2763,7 @@ PrefabInstance:
       objectReference: {fileID: -1696027054, guid: 56df2dc498dfc874f8460ef1c810d4e9, type: 3}
     - target: {fileID: 1002753153057636510, guid: 7443b41f5f27a804c9b02be61f651ca1, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1002753153057636511, guid: 7443b41f5f27a804c9b02be61f651ca1, type: 3}
       propertyPath: m_RootOrder
@@ -4021,6 +4034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   canAttack: 1
+  ninja: {fileID: 0}
 --- !u!50 &1594755223
 Rigidbody2D:
   serializedVersion: 4
@@ -4659,6 +4673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   canAttack: 1
+  ninja: {fileID: 0}
 --- !u!50 &1831414359
 Rigidbody2D:
   serializedVersion: 4
@@ -4783,6 +4798,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1832467198 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1002753153057636507, guid: 7443b41f5f27a804c9b02be61f651ca1, type: 3}
+  m_PrefabInstance: {fileID: 1084986322}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832467188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e5321759dfee1a4fb79f25da8e6f8d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1838737616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4899,6 +4925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   canAttack: 1
+  ninja: {fileID: 0}
 --- !u!50 &1917744258
 Rigidbody2D:
   serializedVersion: 4

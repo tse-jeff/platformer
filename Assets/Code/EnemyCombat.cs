@@ -6,6 +6,7 @@ public class EnemyCombat : MonoBehaviour
 {
     public int health = 5;
     public bool canAttack = true;
+    public PlayerMovement ninja;
 
     void Start()
     {
@@ -37,6 +38,7 @@ public class EnemyCombat : MonoBehaviour
     {
         canAttack = false;
         PublicVars.playerHealth -= 1;
+        ninja.HurtAnimation(gameObject);
         yield return new WaitForSeconds(2f);
         canAttack = true;
         

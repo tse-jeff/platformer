@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform feetTrans;
     public LayerMask groundLayer;
-    public Animator animtor;
+    public Animator animator;
 
     public int speed = 5;
     public int sprintMultiplier = 2;
@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         //gravityStore = theRB.gravityScale;  
+        HurtAnimation(gameObject);
     }
 
     void FixedUpdate()
@@ -46,13 +47,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             xSpeed *= sprintMultiplier;
-            animtor.SetBool("isRunning", true);
+            animator.SetBool("isRunning", true);
         }
         else
         {
-            animtor.SetBool("isRunning", false);
+            animator.SetBool("isRunning", false);
         }
-        animtor.SetFloat("speed", Mathf.Abs(xSpeed));
+        animator.SetFloat("speed", Mathf.Abs(xSpeed));
         _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
         if (xSpeed < 0 && PublicVars.facingRight == true)
         {
@@ -69,11 +70,11 @@ public class PlayerMovement : MonoBehaviour
         grounded = Physics2D.OverlapCircle(feetTrans.position, .1f, groundLayer);
         if (grounded)
         {
-            animtor.SetBool("isJumping", false);
+            animator.SetBool("isJumping", false);
             airjumps = 1;
             if (Input.GetButtonDown("Jump"))
             {
-                animtor.SetBool("isJumping", true);
+                animator.SetBool("isJumping", true);
                 _rigidbody.AddForce(new Vector2(0, jumpForce));
             }
         }
@@ -81,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump"))
             {
-                animtor.SetBool("isJumping", true);
+                animator.SetBool("isJumping", true);
                 _rigidbody.AddForce(new Vector2(0, jumpForce));
                 airjumps--;
             }
@@ -135,5 +136,9 @@ public class PlayerMovement : MonoBehaviour
         currDirection.x *= -1;
         gameObject.transform.localScale = currDirection;
         PublicVars.facingRight = !PublicVars.facingRight;
+    }
+
+    public void HurtAnimation(GameObject enemy) {
+        animator.SetTrigger("hurt");
     }
 }
