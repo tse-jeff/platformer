@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animtor;
 
     public int speed = 5;
+    public int sprintMultiplier = 2;
     public int jumpForce = 300;
     public int airjumps = 1;
     
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     float xSpeed = 0;
+    
 
     void Start()
     {
@@ -41,6 +43,15 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         xSpeed = Input.GetAxis("Horizontal") * speed;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            xSpeed *= sprintMultiplier;
+            animtor.SetBool("isRunning", true);
+        }
+        else
+        {
+            animtor.SetBool("isRunning", false);
+        }
         animtor.SetFloat("speed", Mathf.Abs(xSpeed));
         _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
         if (xSpeed < 0 && PublicVars.facingRight == true)
