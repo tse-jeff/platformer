@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour
 {
-    public int health = 5;
+    public int health = 15;
     public Animator animator;
     public GameObject player;
     public bool enemyFacingRight = false;
