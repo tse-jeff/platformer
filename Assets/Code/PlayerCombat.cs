@@ -10,7 +10,8 @@ public class PlayerCombat : MonoBehaviour
     public TextMeshProUGUI StarText;
 
     public Transform attackPoint;
-    public float meleeRange = 0.91f;
+    //public float meleeRange = 0.91f;
+    public Vector2 meleeRange = new Vector2(30,30);
     public LayerMask enemyLayers;
     public Animator animator;
     public GameObject Stars;
@@ -45,11 +46,19 @@ public class PlayerCombat : MonoBehaviour
 
     void MeleeAttack()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, meleeRange, enemyLayers);
+        Collider2D[] hits = Physics2D.OverlapBoxAll(attackPoint.position, meleeRange, enemyLayers);
 
         foreach (Collider2D enemy in hits)
         {
-            enemy.GetComponent<EnemyCombat>().TakeMeleeDamage();
+            if(enemy.gameObject.tag == "Arrow")
+            {
+                Destroy(enemy.gameObject);
+            }
+            else if(enemy.gameObject.tag == "Enemy")
+            {
+                enemy.GetComponent<EnemyCombat>().TakeMeleeDamage();
+            }
+            
         }
     }
 
@@ -89,7 +98,8 @@ public class PlayerCombat : MonoBehaviour
         PublicVars.facingRight = !PublicVars.facingRight;
     }
     
-    //private void OnDrawGizmosSelected() {
-    //    Gizmos.DrawWireSphere(attackPoint.position, meleeRange);
-    //}
+    private void OnDrawGizmosSelected() {
+        //Gizmos.DrawWireSphere(attackPoint.position, meleeRange);\
+        Gizmos.DrawWireCube(attackPoint.position, meleeRange);
+    }
 }

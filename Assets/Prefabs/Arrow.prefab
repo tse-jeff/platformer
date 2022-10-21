@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 2416402079687922148}
   - component: {fileID: 1081476026679792984}
   - component: {fileID: 6551572017850984491}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Arrow
-  m_TagString: NinjaStar
+  m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
