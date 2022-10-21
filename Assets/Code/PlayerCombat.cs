@@ -10,7 +10,6 @@ public class PlayerCombat : MonoBehaviour
     public TextMeshProUGUI StarText;
 
     public Transform attackPoint;
-    //public float meleeRange = 0.91f;
     public Vector2 meleeRange = new Vector2(30,30);
     public LayerMask enemyLayers;
     public Animator animator;
@@ -99,7 +98,6 @@ public class PlayerCombat : MonoBehaviour
     }
     
     private void OnDrawGizmosSelected() {
-        //Gizmos.DrawWireSphere(attackPoint.position, meleeRange);\
         Gizmos.DrawWireCube(attackPoint.position, meleeRange);
     }
 }

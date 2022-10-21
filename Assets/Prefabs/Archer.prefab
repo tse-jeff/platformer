@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 4800146612048852367}
   - component: {fileID: 4800146612048852360}
   - component: {fileID: 4800146612048852364}
-  - component: {fileID: 5144854178972554461}
-  - component: {fileID: 5144854178367006198}
   - component: {fileID: 5144854178367006199}
   m_Layer: 7
   m_Name: Archer
@@ -176,36 +174,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5144854178972554461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4800146612048852362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2724bb15d51b9be45b8d4bf4567667ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 4800146612048852364}
-  canAttack: 1
---- !u!58 &5144854178367006198
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4800146612048852362}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.20659764, y: 0}
-  serializedVersion: 2
-  m_Radius: 5.3583508
 --- !u!114 &5144854178367006199
 MonoBehaviour:
   m_ObjectHideFlags: 0
