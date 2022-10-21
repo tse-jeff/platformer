@@ -5,9 +5,10 @@ using UnityEngine;
 public class EnemyCombat : MonoBehaviour
 {
     public int health = 5;
-    public bool canAttack = true;
-    public PlayerMovement ninja;
     public Animator animator;
+    public GameObject player;
+    public bool enemyFacingRight = false;
+    public Vector2 playerDirection;
 
     void Start()
     {
@@ -16,6 +17,21 @@ public class EnemyCombat : MonoBehaviour
 
     void Update()
     {
+        playerDirection = (player.transform.position - transform.position).normalized;
+
+        if(playerDirection.x < 0 && enemyFacingRight == true)
+        {
+            Flip();
+            enemyFacingRight = false;
+        }
+
+        else if(playerDirection.x > 0 && enemyFacingRight == false)
+        {
+            Flip();
+            enemyFacingRight = true;
+        }
+
+
         if(health < 1)
         {
             gameObject.tag = "Dead";
@@ -24,26 +40,6 @@ public class EnemyCombat : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
             StartCoroutine(DestroyEnemy());
         }
-        
-    }
-
-
-    private void OnCollisionStay2D(Collision2D other) {
-        if(other.gameObject.tag == "Player" && canAttack == true)
-        {
-            StartCoroutine(AttackPlayer());
-        }
-    }
-    
-    IEnumerator AttackPlayer()
-    {
-        canAttack = false;
-        animator.SetTrigger("attack");
-        PublicVars.playerHealth -= 1;
-        ninja.HurtAnimation(gameObject);
-        yield return new WaitForSeconds(2f);
-        canAttack = true;
-        
         
     }
 
@@ -58,12 +54,19 @@ public class EnemyCombat : MonoBehaviour
     public void TakeMeleeDamage()
     {
         animator.SetTrigger("hurt");
-        health -= 1;
+        health -= 10;
     }
 
     public void TakeRangedDamage()
     {
         animator.SetTrigger("hurt");
         health -= 5;
+    }
+
+    void Flip()
+    {
+        Vector3 currDirection = gameObject.transform.localScale;
+        currDirection.x *= -1;
+        gameObject.transform.localScale = currDirection;
     }
 }

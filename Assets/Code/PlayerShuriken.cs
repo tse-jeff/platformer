@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LifeSpan : MonoBehaviour
+public class PlayerShuriken : MonoBehaviour
 {
     float lifeTime = 2;
     // Start is called before the first frame update
@@ -16,7 +16,7 @@ public class LifeSpan : MonoBehaviour
         {
             other.GetComponent<EnemyCombat>().TakeRangedDamage();
         }
-        if(other.gameObject.tag != "Player" && other.gameObject.tag != "Dead" && other.gameObject.tag != "Coin" && other.gameObject.tag != "NinjaStar")
+        if(other.gameObject.tag != "Player" && other.gameObject.tag != "Dead" && other.gameObject.tag != "Coin" && other.gameObject.tag != "NinjaStar" && other.gameObject.tag != "Range")
         {
             Destroy(gameObject);
         }
