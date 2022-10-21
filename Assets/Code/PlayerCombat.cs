@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -10,11 +11,23 @@ public class PlayerCombat : MonoBehaviour
     public TextMeshProUGUI StarText;
 
     public Transform attackPoint;
-    public Vector2 meleeRange = new Vector2(30,30);
+    public Vector2 meleeRange = new Vector2(30, 30);
     public LayerMask enemyLayers;
     public Animator animator;
     public GameObject Stars;
     int starForce = 900;
+
+    public Slider healthBar;
+
+    private void Start()
+    {
+        healthBar.value = 1;
+    }
+
+    public void SetHealth(int hp)
+    {
+        healthBar.value = (float)((double)hp / 3);
+    }
 
     void Update()
     {
@@ -49,15 +62,15 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D enemy in hits)
         {
-            if(enemy.gameObject.tag == "Arrow")
+            if (enemy.gameObject.tag == "Arrow")
             {
                 Destroy(enemy.gameObject);
             }
-            else if(enemy.gameObject.tag == "Enemy")
+            else if (enemy.gameObject.tag == "Enemy")
             {
                 enemy.GetComponent<EnemyCombat>().TakeMeleeDamage();
             }
-            
+
         }
     }
 
@@ -79,14 +92,16 @@ public class PlayerCombat : MonoBehaviour
                 collectedStar.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1, 0) * starForce);
             }
 
-            
+
         }
 
     }
 
-    public void TakeDamage(){
+    public void TakeDamage()
+    {
         animator.SetTrigger("hurt");
-        PublicVars.playerHealth -= 1;;
+        PublicVars.playerHealth -= 1;
+        SetHealth(PublicVars.playerHealth);
     }
 
     void Flip()
@@ -96,8 +111,9 @@ public class PlayerCombat : MonoBehaviour
         gameObject.transform.localScale = currDirection;
         PublicVars.facingRight = !PublicVars.facingRight;
     }
-    
-    private void OnDrawGizmosSelected() {
+
+    private void OnDrawGizmosSelected()
+    {
         Gizmos.DrawWireCube(attackPoint.position, meleeRange);
     }
 }
