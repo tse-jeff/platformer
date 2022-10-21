@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DashAttack : MonoBehaviour
+public class WalkAttack : MonoBehaviour
 {
-    public Animator animator;
+ public Animator animator;
     public LayerMask playerLayer; 
     
     public bool canAttack = true;
-    public bool canLunge = true;
-    public int dashForce = 600;
+    public int walkForce = 50;
 
-    Rigidbody2D dasher;
+    Rigidbody2D walker;
     RaycastHit2D ninjaLOS;
 
 
@@ -19,36 +18,39 @@ public class DashAttack : MonoBehaviour
     {
         animator.SetBool("alive", true);
         Physics2D.queriesStartInColliders = false;
-        dasher = GetComponent<Rigidbody2D>();
+        walker = GetComponent<Rigidbody2D>();
     }
 
 
-
-    //Lunge
+    //Walk
     private void OnTriggerStay2D(Collider2D other) {
-        if(other.gameObject.tag == "Player" && canLunge == true)
+        if(other.gameObject.tag == "Player")
         {
             Vector2 ninjaPosition = other.transform.position - transform.position;
             RaycastHit2D ninjaLOS = Physics2D.Raycast(transform.position, ninjaPosition, playerLayer);
             Debug.DrawLine (transform.position, ninjaLOS.point, Color.red);
 
             //Dasher sees the ninja
-            if(other.gameObject == ninjaLOS.transform.gameObject)
+            ninjaPosition.Normalize();
+            
+            print(walker.velocity.x);
+            if(walker.velocity.x < 7 && walker.velocity.x > -7)
             {
-                StartCoroutine(Lunge(ninjaPosition));
+                walker.AddForce(ninjaPosition * walkForce);
             }
             
         }
     }
-    
+
     //Stop moving when dont see enemy
     private void OnTriggerExit2D(Collider2D other) 
     {
         if(other.gameObject.tag == "Player")
         {
-            dasher.velocity = new Vector2(0,0);
+            walker.velocity = new Vector2(0,0);
         }
     }
+        
 
     //Melee attacks
     private void OnCollisionStay2D(Collision2D other) {
@@ -60,16 +62,7 @@ public class DashAttack : MonoBehaviour
             }
         }
     }
-    
 
-    IEnumerator Lunge(Vector2 ninjaPosition)
-    {
-        canLunge = false;
-        ninjaPosition.Normalize();
-        dasher.AddForce(ninjaPosition * dashForce);
-        yield return new WaitForSeconds(2f);
-        canLunge = true;
-    }
 
     IEnumerator AttackPlayer()
     {
