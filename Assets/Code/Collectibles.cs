@@ -13,9 +13,9 @@ public class Collectibles : MonoBehaviour
         Score.text = "SCORE: " + PublicVars.score;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("NinjaStar"))
+        if (other.gameObject.CompareTag("NinjaStarCollectable"))
         {
             Destroy(other.gameObject);
             PublicVars.stars += 1;
