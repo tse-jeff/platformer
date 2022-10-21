@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -786996150, guid: 590996561e65b1d4aad425443ecbb487, type: 3}
+  m_Sprite: {fileID: -2009023811, guid: 94e86d2d1bed4fb4ba84bb1c9c879f60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   animator: {fileID: 1043957666784665961}
-  player: {fileID: 0}
+  player: {fileID: 1661285502692705587, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
   enemyFacingRight: 0
   playerDirection: {x: 0, y: 0}
 --- !u!95 &1043957666784665961
@@ -164,7 +164,7 @@ Animator:
   m_GameObject: {fileID: 1043957666784665965}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: abbf3578fba6aeb4d89bdbb21a3f20c6, type: 2}
+  m_Controller: {fileID: 9100000, guid: e1a90c43925dd9d4b9a2996b1516ec34, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

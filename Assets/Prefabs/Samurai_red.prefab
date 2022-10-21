@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   animator: {fileID: 431143199344504462}
-  player: {fileID: 0}
+  player: {fileID: 1661285502692705587, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
   enemyFacingRight: 0
   playerDirection: {x: 0, y: 0}
 --- !u!95 &431143199344504462
