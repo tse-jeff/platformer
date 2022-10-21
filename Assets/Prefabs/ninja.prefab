@@ -172,6 +172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e5321759dfee1a4fb79f25da8e6f8d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallJumpTime: 0.2
+  wallSlideSpeed: 0.3
+  wallDistance: 0.7
+  isFacingRight: 0
+  pauseMenuScreen: {fileID: 0}
   feetTrans: {fileID: 1661285502974303697}
   groundLayer:
     serializedVersion: 2
@@ -181,7 +186,9 @@ MonoBehaviour:
   sprintMultiplier: 2
   jumpForce: 700
   airjumps: 1
+  _rigidbody: {fileID: 0}
   grounded: 0
+  paused: 0
 --- !u!114 &1661285502692705578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,12 +203,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StarText: {fileID: 0}
   attackPoint: {fileID: 1661285501339953463}
-  meleeRange: 0.91
+  meleeRange: {x: 2.12, y: 2.86}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
   animator: {fileID: 1937793529576467611}
   Stars: {fileID: 2416402079687922152, guid: bee84f34b29ed6a48b300f9fc3594d86, type: 3}
+  healthBar: {fileID: 0}
 --- !u!114 &1661285502692705579
 MonoBehaviour:
   m_ObjectHideFlags: 0

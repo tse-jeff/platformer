@@ -48,7 +48,7 @@ public class RangedAttack : MonoBehaviour
     {
         canAttack = false;
         sendArrow(ninjaPosition);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         canAttack = true;
         
         

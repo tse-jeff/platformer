@@ -11,7 +11,7 @@ public class PlayerCombat : MonoBehaviour
     public TextMeshProUGUI StarText;
 
     public Transform attackPoint;
-    public Vector2 meleeRange = new Vector2(30, 30);
+    public Vector2 meleeRange = new Vector2(2.12f, 2.86f);
     public LayerMask enemyLayers;
     public Animator animator;
     public GameObject Stars;
@@ -62,6 +62,7 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D enemy in hits)
         {
+            print(enemy.gameObject);
             if (enemy.gameObject.tag == "Arrow")
             {
                 Destroy(enemy.gameObject);
