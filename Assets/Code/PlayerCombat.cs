@@ -75,6 +75,19 @@ public class PlayerCombat : MonoBehaviour
         }
 
     }
+
+    public void TakeDamage(){
+        animator.SetTrigger("hurt");
+        PublicVars.playerHealth -= 1;;
+    }
+
+    void Flip()
+    {
+        Vector3 currDirection = gameObject.transform.localScale;
+        currDirection.x *= -1;
+        gameObject.transform.localScale = currDirection;
+        PublicVars.facingRight = !PublicVars.facingRight;
+    }
     
     //private void OnDrawGizmosSelected() {
     //    Gizmos.DrawWireSphere(attackPoint.position, meleeRange);
