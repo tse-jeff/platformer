@@ -9,7 +9,6 @@ public class LevelChange : MonoBehaviour
     public string sLevelToLoad;
 
     public bool useIntegerLoadLevel = false;
-    public bool isTouching = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +21,10 @@ public class LevelChange : MonoBehaviour
         
     }
 
-    private void OnTrigger2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        isTouching = true;
-       
-        if (collision.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-
             LoadScene();
         }
     }
