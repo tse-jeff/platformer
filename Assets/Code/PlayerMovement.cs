@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D _rigidbody;
 
     public bool grounded = false;
-    public bool paused = true;
+    public bool paused = false;
 
 
 
