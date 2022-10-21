@@ -14,6 +14,13 @@ public class MeleeAttack : MonoBehaviour
         animator.SetBool("alive", true);
     }
 
+    private void FixedUpdate() {
+        if(gameObject.tag == "Dead")
+        {
+            Destroy(this);
+        }
+    }
+
 
     private void OnCollisionStay2D(Collision2D other) {
         if(other.gameObject.tag == "Player" && canAttack == true)

@@ -21,6 +21,13 @@ public class WalkAttack : MonoBehaviour
         walker = GetComponent<Rigidbody2D>();
     }
 
+    private void FixedUpdate() {
+        if(gameObject.tag == "Dead")
+        {
+            Destroy(this);
+        }
+    }
+
 
     //Walk
     private void OnTriggerStay2D(Collider2D other) {

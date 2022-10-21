@@ -20,7 +20,12 @@ public class RangedAttack : MonoBehaviour
         Physics2D.queriesStartInColliders = false;
     }
 
-
+    private void FixedUpdate() {
+        if(gameObject.tag == "Dead")
+        {
+            Destroy(this);
+        }
+    }
 
     
     private void OnTriggerStay2D(Collider2D other) {

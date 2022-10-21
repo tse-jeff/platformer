@@ -22,6 +22,13 @@ public class DashAttack : MonoBehaviour
         dasher = GetComponent<Rigidbody2D>();
     }
 
+    private void FixedUpdate() {
+        if(gameObject.tag == "Dead")
+        {
+            Destroy(this);
+        }
+    }
+
 
 
     //Lunge
