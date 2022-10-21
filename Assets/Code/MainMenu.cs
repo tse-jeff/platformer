@@ -18,12 +18,9 @@ public class MainMenu : MonoBehaviour
 
     public void GoToMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("MainMenu");
     }
 
-    public void GoToCredits()
-    {
-        SceneManager.LoadScene("Credits Scene");
-    }
+    
 
 }
