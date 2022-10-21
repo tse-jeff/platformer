@@ -4923,6 +4923,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1661285502692705576, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661285502692705576, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
+      propertyPath: m_Size.y
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661285502692705576, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d0cc0c53c5d3d404f8bf68e7c0d18df2, type: 2}
     - target: {fileID: 1661285502692705577, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
       propertyPath: pauseMenuScreen
       value: 
@@ -4987,6 +4999,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1661285502692705583, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d0cc0c53c5d3d404f8bf68e7c0d18df2, type: 2}
     - target: {fileID: 1661285502692705587, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
       propertyPath: m_Name
       value: ninja
@@ -5161,6 +5177,10 @@ PrefabInstance:
     - target: {fileID: 2232584640138677534, guid: 0eb094b9339f6a94883e2fd29436d41b, type: 3}
       propertyPath: m_Name
       value: sand_block
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232584640138677534, guid: 0eb094b9339f6a94883e2fd29436d41b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eb094b9339f6a94883e2fd29436d41b, type: 3}
