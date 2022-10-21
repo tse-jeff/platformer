@@ -3120,18 +3120,18 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1828050352}
-  - {fileID: 1521742815}
-  - {fileID: 1145475918}
-  - {fileID: 1095525034}
-  - {fileID: 280672502}
-  - {fileID: 1439859776}
   - {fileID: 117820944}
-  - {fileID: 1111339787}
-  - {fileID: 59712527}
-  - {fileID: 1399333486}
-  - {fileID: 2058677178}
-  - {fileID: 781182225}
   - {fileID: 637450548}
+  - {fileID: 781182225}
+  - {fileID: 1095525034}
+  - {fileID: 1111339787}
+  - {fileID: 1145475918}
+  - {fileID: 1399333486}
+  - {fileID: 1439859776}
+  - {fileID: 1521742815}
+  - {fileID: 2058677178}
+  - {fileID: 280672502}
+  - {fileID: 59712527}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4181,16 +4181,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1661285502692705576, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
       propertyPath: m_Size.x
-      value: 0.9
+      value: 0.8999999
       objectReference: {fileID: 0}
     - target: {fileID: 1661285502692705576, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
       propertyPath: m_Size.y
-      value: 1.35
+      value: 1.2751871
       objectReference: {fileID: 0}
     - target: {fileID: 1661285502692705576, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: d0cc0c53c5d3d404f8bf68e7c0d18df2, type: 2}
+    - target: {fileID: 1661285502692705576, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0475329
+      objectReference: {fileID: 0}
     - target: {fileID: 1661285502692705577, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
       propertyPath: pauseMenuScreen
       value: 
