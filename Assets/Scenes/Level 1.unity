@@ -1709,6 +1709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass_block
       objectReference: {fileID: 0}
+    - target: {fileID: 7959862372114187038, guid: ae869e908857be045b85ea6a9cf10726, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae869e908857be045b85ea6a9cf10726, type: 3}
 --- !u!4 &924184379 stripped
@@ -3390,6 +3394,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: grass_block (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7959862372114187038, guid: ae869e908857be045b85ea6a9cf10726, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae869e908857be045b85ea6a9cf10726, type: 3}
 --- !u!4 &1764486388 stripped
@@ -3713,11 +3721,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2065074413649894163, guid: ae869e908857be045b85ea6a9cf10726, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.51
+      value: 17.506
       objectReference: {fileID: 0}
     - target: {fileID: 2065074413649894163, guid: ae869e908857be045b85ea6a9cf10726, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.23
+      value: -1.298
       objectReference: {fileID: 0}
     - target: {fileID: 2065074413649894163, guid: ae869e908857be045b85ea6a9cf10726, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3754,6 +3762,10 @@ PrefabInstance:
     - target: {fileID: 7959862372114187038, guid: ae869e908857be045b85ea6a9cf10726, type: 3}
       propertyPath: m_Name
       value: grass_block (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959862372114187038, guid: ae869e908857be045b85ea6a9cf10726, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae869e908857be045b85ea6a9cf10726, type: 3}
@@ -3829,6 +3841,10 @@ PrefabInstance:
     - target: {fileID: 7959862372114187038, guid: ae869e908857be045b85ea6a9cf10726, type: 3}
       propertyPath: m_Name
       value: grass_block (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959862372114187038, guid: ae869e908857be045b85ea6a9cf10726, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae869e908857be045b85ea6a9cf10726, type: 3}
