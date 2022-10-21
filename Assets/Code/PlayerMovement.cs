@@ -170,6 +170,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Time.timeScale = 1;
         pauseMenuScreen.SetActive(false);
+        paused = false;
     }
 
     public void GoToMenu()

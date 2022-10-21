@@ -10,6 +10,7 @@ TagManager:
   - Dead
   - Range
   - Arrow
+  - NinjaStarCollectable
   layers:
   - Default
   - TransparentFX
