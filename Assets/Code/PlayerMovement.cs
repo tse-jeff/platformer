@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -6,7 +7,7 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
 
-    
+
     //public Rigidbody2D theRB;
     //private float gravityStore;
     //public float wallJumpTime = .2f;
@@ -14,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     //public Transform wallGrabPoint;
     //private bool canGrab, isGrabbing;
 
+
+    public GameObject pauseMenuScreen;
 
     public Transform feetTrans;
     public LayerMask groundLayer;
@@ -28,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D _rigidbody;
 
     public bool grounded = false;
+    public bool paused = true;
 
 
 
@@ -88,46 +92,57 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        //Incomplete Wall Jump Codes
-        /*
-        if(wallJumpCounter <= 0)
+        if (Input.GetKeyDown("escape") && !paused)
         {
-            //Handle Wall Jumping
-            canGrab = Physics2D.OverlapCircle(wallGrabPoint.position, 0.2f, groundLayer);
+            PauseGame();
+            paused = true;
+        }
+        else if (Input.GetKeyDown("escape") && paused)
+        {
+            ResumeGame();
+            paused = false;
+        }
 
-            isGrabbing = false;
-            if (canGrab && !grounded)
+        //Incomplete Wall Jump Codes
+            /*
+            if(wallJumpCounter <= 0)
             {
-                if ((transform.localScale.x == 1f && Input.GetAxisRaw("Horizontal") > 0) || (transform.localScale.x == -1f && Input.GetAxisRaw("Horizontal") < 0))
+                //Handle Wall Jumping
+                canGrab = Physics2D.OverlapCircle(wallGrabPoint.position, 0.2f, groundLayer);
+
+                isGrabbing = false;
+                if (canGrab && !grounded)
                 {
-                    isGrabbing = true;
+                    if ((transform.localScale.x == 1f && Input.GetAxisRaw("Horizontal") > 0) || (transform.localScale.x == -1f && Input.GetAxisRaw("Horizontal") < 0))
+                    {
+                        isGrabbing = true;
+                    }
+
                 }
 
-            }
 
+                if (isGrabbing)
+                {
+                    theRB.gravityScale = 0f;
+                    theRB.velocity = Vector2.zero;
 
-            if (isGrabbing)
-            {
-                theRB.gravityScale = 0f;
-                theRB.velocity = Vector2.zero;
-
-                if (Input.GetButtonDown("Jump")) {
-                    wallJumpCounter = wallJumpTime;
-                    theRB.velocity = new Vector2(-Input.GetAxisRaw("Horizontal") * speed, jumpForce);
+                    if (Input.GetButtonDown("Jump")) {
+                        wallJumpCounter = wallJumpTime;
+                        theRB.velocity = new Vector2(-Input.GetAxisRaw("Horizontal") * speed, jumpForce);
+                        theRB.gravityScale = gravityStore;
+                        isGrabbing = false;
+                    }
+                }
+                else
+                {
                     theRB.gravityScale = gravityStore;
-                    isGrabbing = false;
                 }
             }
             else
             {
-                theRB.gravityScale = gravityStore;
+                wallJumpCounter -= Time.deltaTime;
             }
-        }
-        else
-        {
-            wallJumpCounter -= Time.deltaTime;
-        }
-        */
+            */
     }
 
     void Flip()
@@ -140,5 +155,23 @@ public class PlayerMovement : MonoBehaviour
 
     public void HurtAnimation(GameObject enemy) {
         animator.SetTrigger("hurt");
+    }
+
+    public void PauseGame()
+    { 
+        
+        Time.timeScale = 0;
+        pauseMenuScreen.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        pauseMenuScreen.SetActive(false);
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
