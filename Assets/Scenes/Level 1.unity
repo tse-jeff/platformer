@@ -3191,6 +3191,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -121.8
       objectReference: {fileID: 0}
+    - target: {fileID: 6016036679012664705, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
+      propertyPath: m_FirstSelected
+      value: 
+      objectReference: {fileID: 1565276258}
     - target: {fileID: 6016036679311927092, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3220,6 +3224,11 @@ PrefabInstance:
 --- !u!224 &1565276257 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6016036678620855940, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
+  m_PrefabInstance: {fileID: 1565276256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1565276258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6016036679971048983, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
   m_PrefabInstance: {fileID: 1565276256}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1565577097 stripped

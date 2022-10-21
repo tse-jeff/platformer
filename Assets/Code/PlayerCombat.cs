@@ -42,14 +42,14 @@ public class PlayerCombat : MonoBehaviour
         }
 
         //Left click
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Fire1"))
         {
             animator.SetTrigger("melee");
             MeleeAttack();
         }
 
         //Right click
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetButtonDown("Fire2"))
         {
             animator.SetTrigger("throw");
             RangedAttack();

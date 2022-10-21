@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetButton("Dash"))
         {
             xSpeed *= sprintMultiplier;
             animator.SetBool("isRunning", true);
@@ -133,12 +133,12 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown("escape") && !paused)
+        if (Input.GetButtonDown("Cancel") && !paused)
         {
             PauseGame();
             paused = true;
         }
-        else if (Input.GetKeyDown("escape") && paused)
+        else if (Input.GetButtonDown("Cancel") && paused)
         {
             ResumeGame();
             paused = false;
@@ -170,6 +170,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Time.timeScale = 1;
         pauseMenuScreen.SetActive(false);
+        paused = false;
     }
 
     public void GoToMenu()
