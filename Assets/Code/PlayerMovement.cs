@@ -36,12 +36,19 @@ public class PlayerMovement : MonoBehaviour
     public bool paused = false;
 
 
+    AudioSource _audioSource;
+    public AudioClip walkSound;
+    public AudioClip dashSound;
+    public AudioClip jumpSound;
+
+
 
     float xSpeed = 0;
     
 
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         _rigidbody = GetComponent<Rigidbody2D>();
         //gravityStore = theRB.gravityScale;  
         HurtAnimation(gameObject);
@@ -66,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButton("Dash"))
         {
             xSpeed *= sprintMultiplier;
+            //_audioSource.PlayOneShot(dashSound, volume);
             animator.SetBool("isRunning", true);
         }
         else

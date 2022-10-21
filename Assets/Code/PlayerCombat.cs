@@ -19,8 +19,13 @@ public class PlayerCombat : MonoBehaviour
 
     public Slider healthBar;
 
+    AudioSource _audioSource;
+    public AudioClip swordSound;
+    public AudioClip starSound;
+
     private void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         healthBar.value = 1;
     }
 
@@ -44,6 +49,7 @@ public class PlayerCombat : MonoBehaviour
         //Left click
         if (Input.GetButtonDown("Fire1"))
         {
+            //_audioSource.PlayOneShot(swordSound, volume);
             animator.SetTrigger("melee");
             MeleeAttack();
         }
@@ -51,6 +57,7 @@ public class PlayerCombat : MonoBehaviour
         //Right click
         else if (Input.GetButtonDown("Fire2"))
         {
+             //_audioSource.PlayOneShot(starSound, volume);
             animator.SetTrigger("throw");
             RangedAttack();
         }
