@@ -2934,7 +2934,7 @@ PrefabInstance:
     - target: {fileID: 1661285502692705577, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
       propertyPath: pauseMenuScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2067695841}
     - target: {fileID: 1661285502692705578, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
       propertyPath: StarText
       value: 
@@ -6664,6 +6664,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f0110bbc474c3f45a86235f82fd55c3, type: 3}
+--- !u!1 &2067695841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6016036678518835528, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
+  m_PrefabInstance: {fileID: 1617276221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2074491253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2573571108350212756, guid: d976ae2348d15af4a871bb787869cb6f, type: 3}
