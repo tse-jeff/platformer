@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Dash Attack Code
 public class DashAttack : MonoBehaviour
 {
     public Animator animator;
