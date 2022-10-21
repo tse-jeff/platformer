@@ -16,7 +16,7 @@ public class EnemyArrow : MonoBehaviour
         {
             other.GetComponent<PlayerCombat>().TakeDamage();
         }
-        if(other.gameObject.tag != "Enemy" && other.gameObject.tag != "Dead" && other.gameObject.tag != "Coin" && other.gameObject.tag != "NinjaStar" && other.gameObject.tag != "Range")
+        if(other.gameObject.tag != "Enemy" && other.gameObject.tag != "Dead" && other.gameObject.tag != "Coin" && other.gameObject.tag != "Range")
         {
             Destroy(gameObject);
         }

@@ -7,7 +7,7 @@ public class RangedAttack : MonoBehaviour
     public Animator animator;
     public LayerMask playerLayer; 
     public GameObject arrows;
-    int arrowForce = 900;
+    int arrowForce = 700;
     
     public bool canAttack = true;
 

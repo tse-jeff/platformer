@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Dead
   - Range
+  - Arrow
   layers:
   - Default
   - TransparentFX
