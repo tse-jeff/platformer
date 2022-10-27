@@ -21,4 +21,13 @@ public class PlayerShuriken : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void FixedUpdate()
+    {
+        // if xspeed is negative, flip the sprite
+        if (GetComponent<Rigidbody2D>().velocity.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+    }
 }
