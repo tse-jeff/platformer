@@ -50,9 +50,8 @@ public class PlayerMovement : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        //gravityStore = theRB.gravityScale;  
-        HurtAnimation(gameObject);
-
+        //gravityStore = theRB.gravityScale;
+        animator.SetBool("alive", true);
 
     }
 

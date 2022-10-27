@@ -74,6 +74,7 @@ public class DashAttack : MonoBehaviour
         canLunge = false;
         ninjaPosition.Normalize();
         dasher.AddForce(ninjaPosition * dashForce);
+        animator.SetFloat("xSpeed", ninjaPosition.x);
         yield return new WaitForSeconds(2f);
         canLunge = true;
     }

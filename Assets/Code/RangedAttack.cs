@@ -47,6 +47,7 @@ public class RangedAttack : MonoBehaviour
     IEnumerator AttackPlayer(Vector2 ninjaPosition)
     {
         canAttack = false;
+        animator.SetTrigger("attack");
         sendArrow(ninjaPosition);
         yield return new WaitForSeconds(1.5f);
         canAttack = true;
