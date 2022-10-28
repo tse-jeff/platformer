@@ -46,6 +46,7 @@ public class PlayerCombat : MonoBehaviour
         if (PublicVars.playerHealth < 1)
         {
             if(gameObject.tag != "Dead"){
+                PublicVars.lives--;
                 _audioSource.PlayOneShot(deathSound, volume);
                 gameObject.tag = "Dead";
                 StartCoroutine(Death());
@@ -129,13 +130,19 @@ public class PlayerCombat : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
 
-        //Reload Scene
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
-        PublicVars.playerHealth = 3;
-        PublicVars.facingRight = true;
-        PublicVars.stars = PublicVars.prevStars;
-        PublicVars.score = PublicVars.prevScore;
+        if(PublicVars.lives >= 0){
+            //Reload Scene
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+            PublicVars.playerHealth = 3;
+            PublicVars.facingRight = true;
+            PublicVars.stars = PublicVars.prevStars;
+            PublicVars.score = PublicVars.prevScore;
+        }
+        else{
+            SceneManager.LoadScene("Game Over");
+        }
+
     }
 
     void Flip()
