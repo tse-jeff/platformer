@@ -23,28 +23,30 @@ public class EnemyCombat : MonoBehaviour
 
     void Update()
     {
-        playerDirection = (player.transform.position - transform.position).normalized;
+        if(player != null){
+            playerDirection = (player.transform.position - transform.position).normalized;
 
-        if(playerDirection.x < 0 && enemyFacingRight == true)
-        {
-            Flip();
-            enemyFacingRight = false;
-        }
+            if(playerDirection.x < 0 && enemyFacingRight == true)
+            {
+                Flip();
+                enemyFacingRight = false;
+            }
 
-        else if(playerDirection.x > 0 && enemyFacingRight == false)
-        {
-            Flip();
-            enemyFacingRight = true;
-        }
+            else if(playerDirection.x > 0 && enemyFacingRight == false)
+            {
+                Flip();
+                enemyFacingRight = true;
+            }
 
 
-        if(health < 1)
-        {
-            gameObject.tag = "Dead";
-            animator.SetBool("alive", false);
-            gameObject.GetComponent<Collider2D>().enabled = false;
-            gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
-            StartCoroutine(DestroyEnemy());
+            if(health < 1)
+            {
+                gameObject.tag = "Dead";
+                animator.SetBool("alive", false);
+                gameObject.GetComponent<Collider2D>().enabled = false;
+                gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+                StartCoroutine(DestroyEnemy());
+            }
         }
         
     }

@@ -10,7 +10,7 @@ public class DeathBox : MonoBehaviour
         {
             PublicVars.playerHealth = 0;
         }
-        else
+        else if(other.gameObject.tag != "Dead")
         {
             Destroy(other.gameObject);
         }
