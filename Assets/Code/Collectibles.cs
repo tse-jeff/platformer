@@ -21,7 +21,6 @@ public class Collectibles : MonoBehaviour
         Stars.text = "STARS: " + PublicVars.stars;
         Score.text = "SCORE: " + PublicVars.score;
     }
-    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
