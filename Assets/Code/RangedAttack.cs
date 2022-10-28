@@ -20,7 +20,6 @@ public class RangedAttack : MonoBehaviour
     void Start()
     {
         _audioSource = gameObject.AddComponent<AudioSource>();
-        animator.SetBool("alive", true);
         Physics2D.queriesStartInColliders = false;
     }
 
