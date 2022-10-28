@@ -13,7 +13,7 @@ public class WalkAttack : MonoBehaviour
     Rigidbody2D walker;
     RaycastHit2D ninjaLOS;
 
-
+    // Start
     void Start()
     {
         animator.SetBool("alive", true);
