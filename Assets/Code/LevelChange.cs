@@ -25,6 +25,8 @@ public class LevelChange : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            PublicVars.prevScore = PublicVars.score;
+            PublicVars.prevStars = PublicVars.stars;
             LoadScene();
         }
     }
