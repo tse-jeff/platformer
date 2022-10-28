@@ -21,11 +21,13 @@ public class PlayerCombat : MonoBehaviour
 
     AudioSource _audioSource;
     public AudioClip swordSound;
-    public AudioClip starSound;
+    public AudioClip hurtSound;
+    public AudioClip deflectSound;
+    public float volume = 0.5f;
 
     private void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
+        _audioSource = gameObject.AddComponent<AudioSource>();
         healthBar.value = 1;
     }
 
@@ -52,7 +54,7 @@ public class PlayerCombat : MonoBehaviour
         //Left click
         if (Input.GetButtonDown("Fire1"))
         {
-            //_audioSource.PlayOneShot(swordSound, volume);
+            _audioSource.PlayOneShot(swordSound, volume);
             animator.SetTrigger("melee");
             MeleeAttack();
         }
@@ -60,7 +62,6 @@ public class PlayerCombat : MonoBehaviour
         //Right click
         else if (Input.GetButtonDown("Fire2"))
         {
-             //_audioSource.PlayOneShot(starSound, volume);
             animator.SetTrigger("throw");
             RangedAttack();
         }
@@ -75,6 +76,7 @@ public class PlayerCombat : MonoBehaviour
             print(enemy.gameObject);
             if (enemy.gameObject.tag == "Arrow")
             {
+                _audioSource.PlayOneShot(deflectSound, volume);
                 Destroy(enemy.gameObject);
             }
             else if (enemy.gameObject.tag == "Enemy")
@@ -110,6 +112,7 @@ public class PlayerCombat : MonoBehaviour
 
     public void TakeDamage()
     {
+        _audioSource.PlayOneShot(hurtSound, volume);
         animator.SetTrigger("hurt");
         PublicVars.playerHealth -= 1;
         SetHealth(PublicVars.playerHealth);

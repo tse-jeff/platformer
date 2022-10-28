@@ -5,9 +5,16 @@ using UnityEngine;
 public class PlayerShuriken : MonoBehaviour
 {
     float lifeTime = 2;
+
+    AudioSource _audioSource;
+    public AudioClip starSound;
+    public float volume = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
+        _audioSource = gameObject.AddComponent<AudioSource>();
+        _audioSource.PlayOneShot(starSound, volume);
         Destroy(gameObject, lifeTime);
     }
 

@@ -154,6 +154,9 @@ MonoBehaviour:
   player: {fileID: 1661285502692705587, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
   enemyFacingRight: 0
   playerDirection: {x: 0, y: 0}
+  hurtSound: {fileID: 8300000, guid: 6dd4b8a09613424499130e7832432735, type: 3}
+  deathSound: {fileID: 8300000, guid: ab73109306609494aa4c78c01bf97895, type: 3}
+  volume: 0.5
 --- !u!95 &1043957666784665961
 Animator:
   serializedVersion: 4
@@ -193,6 +196,9 @@ MonoBehaviour:
   canAttack: 1
   canLunge: 1
   dashForce: 600
+  attackSound: {fileID: 8300000, guid: 402c4164a8b42074d918a677974c4bb7, type: 3}
+  dashSound: {fileID: 8300000, guid: e608c7aa68f70c643aa12220394be0f2, type: 3}
+  volume: 0.5
 --- !u!1 &1043957667452931666
 GameObject:
   m_ObjectHideFlags: 0

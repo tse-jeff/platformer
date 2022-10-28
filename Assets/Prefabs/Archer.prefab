@@ -154,6 +154,9 @@ MonoBehaviour:
   player: {fileID: 1661285502692705587, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
   enemyFacingRight: 0
   playerDirection: {x: 0, y: 0}
+  hurtSound: {fileID: 8300000, guid: 6dd4b8a09613424499130e7832432735, type: 3}
+  deathSound: {fileID: 8300000, guid: ab73109306609494aa4c78c01bf97895, type: 3}
+  volume: 0.5
 --- !u!95 &4800146612048852364
 Animator:
   serializedVersion: 4
@@ -192,6 +195,8 @@ MonoBehaviour:
     m_Bits: 256
   arrows: {fileID: 7903212046637679345, guid: 57a540d0d6919124c93254f31cf3218c, type: 3}
   canAttack: 1
+  attackSound: {fileID: 8300000, guid: f3b3f73a414593044890098a2bdd0619, type: 3}
+  volume: 0.5
 --- !u!1 &5144854177454629563
 GameObject:
   m_ObjectHideFlags: 0

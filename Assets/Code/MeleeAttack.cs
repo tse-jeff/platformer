@@ -9,8 +9,13 @@ public class MeleeAttack : MonoBehaviour
 
     public bool canAttack = true;
 
+    AudioSource _audioSource;
+    public AudioClip attackSound;
+    public float volume = 0.5f;
+
     void Start()
     {
+        _audioSource = gameObject.AddComponent<AudioSource>();
         animator.SetBool("alive", true);
     }
 
@@ -33,6 +38,7 @@ public class MeleeAttack : MonoBehaviour
     IEnumerator AttackPlayer()
     {
         canAttack = false;
+        _audioSource.PlayOneShot(attackSound, volume);
         animator.SetTrigger("attack");
         yield return new WaitForSeconds(2f);
         canAttack = true;

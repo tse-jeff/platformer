@@ -153,6 +153,9 @@ MonoBehaviour:
   player: {fileID: 1661285502692705587, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
   enemyFacingRight: 0
   playerDirection: {x: 0, y: 0}
+  hurtSound: {fileID: 8300000, guid: 6dd4b8a09613424499130e7832432735, type: 3}
+  deathSound: {fileID: 8300000, guid: ab73109306609494aa4c78c01bf97895, type: 3}
+  volume: 0.5
 --- !u!95 &431143199344504462
 Animator:
   serializedVersion: 4
@@ -187,3 +190,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 431143199344504462}
   canAttack: 1
+  attackSound: {fileID: 8300000, guid: 402c4164a8b42074d918a677974c4bb7, type: 3}
+  volume: 0.5

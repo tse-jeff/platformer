@@ -7,15 +7,19 @@ public class RangedAttack : MonoBehaviour
     public Animator animator;
     public LayerMask playerLayer; 
     public GameObject arrows;
-    int arrowForce = 700;
+    int arrowForce = 400;
     
     public bool canAttack = true;
 
     RaycastHit2D ninjaLOS;
 
+    AudioSource _audioSource;
+    public AudioClip attackSound;
+    public float volume = 0.5f;
 
     void Start()
     {
+        _audioSource = gameObject.AddComponent<AudioSource>();
         animator.SetBool("alive", true);
         Physics2D.queriesStartInColliders = false;
     }
@@ -48,6 +52,7 @@ public class RangedAttack : MonoBehaviour
     {
         canAttack = false;
         animator.SetTrigger("attack");
+        _audioSource.PlayOneShot(attackSound, volume);
         sendArrow(ninjaPosition);
         yield return new WaitForSeconds(1.5f);
         canAttack = true;

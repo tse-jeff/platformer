@@ -14,9 +14,14 @@ public class DashAttack : MonoBehaviour
     Rigidbody2D dasher;
     RaycastHit2D ninjaLOS;
 
-
+    AudioSource _audioSource;
+    public AudioClip attackSound;
+    public AudioClip dashSound;
+    public float volume = 0.5f;
+    
     void Start()
     {
+        _audioSource = gameObject.AddComponent<AudioSource>();
         animator.SetBool("alive", true);
         Physics2D.queriesStartInColliders = false;
         dasher = GetComponent<Rigidbody2D>();
@@ -72,7 +77,9 @@ public class DashAttack : MonoBehaviour
     IEnumerator Lunge(Vector2 ninjaPosition)
     {
         canLunge = false;
+        _audioSource.PlayOneShot(dashSound, volume);
         ninjaPosition.Normalize();
+        dasher.velocity = new Vector2(0,0);
         dasher.AddForce(ninjaPosition * dashForce);
         animator.SetFloat("xSpeed", ninjaPosition.x);
         yield return new WaitForSeconds(2f);
@@ -82,6 +89,7 @@ public class DashAttack : MonoBehaviour
     IEnumerator AttackPlayer()
     {
         canAttack = false;
+        _audioSource.PlayOneShot(attackSound, volume);
         animator.SetTrigger("attack");
         yield return new WaitForSeconds(2f);
         canAttack = true;
