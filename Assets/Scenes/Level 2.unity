@@ -3678,6 +3678,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4166191121168740249, guid: 0eb094b9339f6a94883e2fd29436d41b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eb094b9339f6a94883e2fd29436d41b, type: 3}
 --- !u!114 &1228344016 stripped
@@ -6223,7 +6227,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4dc214cc6e7b67f47ad6da37879851b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6638,7 +6642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5383764664918627021, guid: 23ea4dfa9ca88594b9be2661a600cdbd, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5383764664918627021, guid: 23ea4dfa9ca88594b9be2661a600cdbd, type: 3}
       propertyPath: m_AnchorMax.x
