@@ -5,6 +5,7 @@ using TMPro;
 
 public class Collectibles : MonoBehaviour
 {
+    public TextMeshProUGUI Lives;
     public TextMeshProUGUI Score;
     public TextMeshProUGUI Stars;
 
@@ -16,6 +17,7 @@ public class Collectibles : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         _audioSource = gameObject.AddComponent<AudioSource>();
+        Lives.text = "LIVES: " + PublicVars.lives;
         Stars.text = "STARS: " + PublicVars.stars;
         Score.text = "SCORE: " + PublicVars.score;
     }

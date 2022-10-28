@@ -2620,6 +2620,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6016036679971048983, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
   m_PrefabInstance: {fileID: 1655219797}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &991707845 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6309986522530133364, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
+  m_PrefabInstance: {fileID: 1655219797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1094481106 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6016036680145698838, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
@@ -3962,6 +3973,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6016036678518835543, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6016036678545409560, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
       propertyPath: m_SizeDelta.x
       value: 80
@@ -4080,7 +4095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6016036678712954796, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -121.8
+      value: -140.4
       objectReference: {fileID: 0}
     - target: {fileID: 6016036679012664705, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
       propertyPath: m_FirstSelected
@@ -4108,7 +4123,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6016036680145698839, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -81.4
+      value: -109.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8789495524977430326, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 8789495524977430326, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -75.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
@@ -4701,6 +4724,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2091354112}
+    - target: {fileID: 1661285502692705579, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
+      propertyPath: Lives
+      value: 
+      objectReference: {fileID: 991707845}
     - target: {fileID: 1661285502692705579, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
       propertyPath: Score
       value: 
