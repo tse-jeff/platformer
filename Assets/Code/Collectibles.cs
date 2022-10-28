@@ -26,7 +26,7 @@ public class Collectibles : MonoBehaviour
     {
         if (other.gameObject.CompareTag("NinjaStarCollectable"))
         {
-            _audioSource.PlayOneShot(collectStarSound, volume+0.3f);
+            _audioSource.PlayOneShot(collectStarSound, volume);
             Destroy(other.gameObject);
             PublicVars.stars += 1;
             Stars.text = "STARS: " + PublicVars.stars;

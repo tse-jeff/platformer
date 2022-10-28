@@ -45,7 +45,8 @@ public class PlayerCombat : MonoBehaviour
         // death
         if (PublicVars.playerHealth < 1)
         {
-            if(gameObject.tag != "Dead"){
+            if (gameObject.tag != "Dead")
+            {
                 PublicVars.lives--;
                 _audioSource.PlayOneShot(deathSound, volume);
                 gameObject.tag = "Dead";
@@ -126,11 +127,12 @@ public class PlayerCombat : MonoBehaviour
         animator.SetBool("isJumping", false);
         animator.SetBool("alive", false);
         _rigidbody.isKinematic = true;
-        _rigidbody.velocity = new Vector2(0, 0);
+        _rigidbody.velocity = new Vector2(0, -5);
         yield return new WaitForSeconds(2f);
 
 
-        if(PublicVars.lives >= 0){
+        if (PublicVars.lives >= 0)
+        {
             //Reload Scene
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
@@ -139,7 +141,8 @@ public class PlayerCombat : MonoBehaviour
             PublicVars.stars = PublicVars.prevStars;
             PublicVars.score = PublicVars.prevScore;
         }
-        else{
+        else
+        {
             SceneManager.LoadScene("Game Over");
         }
 
