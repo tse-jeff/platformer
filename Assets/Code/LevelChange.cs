@@ -27,6 +27,7 @@ public class LevelChange : MonoBehaviour
         {
             PublicVars.prevScore = PublicVars.score;
             PublicVars.prevStars = PublicVars.stars;
+            PublicVars.playerHealth = 3;
             LoadScene();
         }
     }
