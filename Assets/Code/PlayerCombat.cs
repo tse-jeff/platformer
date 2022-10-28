@@ -47,7 +47,8 @@ public class PlayerCombat : MonoBehaviour
             PublicVars.playerHealth = 3;
             animator.SetBool("alive", true);
             PublicVars.facingRight = true;
-            PublicVars.stars = 3;
+            PublicVars.stars = PublicVars.prevStars;
+            PublicVars.score = PublicVars.prevScore;
 
         }
 
