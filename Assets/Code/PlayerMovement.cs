@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     public int speed = 5;
     public int sprintMultiplier = 2;
-    public int jumpForce = 300;
+    public int jumpForce = 900;
     public int airjumps = 1;
     
 
@@ -128,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 animator.SetBool("isJumping", true);
+                _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
                 _rigidbody.AddForce(new Vector2(0, jumpForce));
             }
         }
@@ -136,6 +137,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 animator.SetBool("isJumping", true);
+                _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
                 _rigidbody.AddForce(new Vector2(0, jumpForce));
                 airjumps--;
             }
