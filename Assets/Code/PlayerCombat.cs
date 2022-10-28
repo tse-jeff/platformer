@@ -130,7 +130,6 @@ public class PlayerCombat : MonoBehaviour
         _rigidbody.velocity = new Vector2(0, -5);
         yield return new WaitForSeconds(2f);
 
-
         if (PublicVars.lives >= 0)
         {
             //Reload Scene
