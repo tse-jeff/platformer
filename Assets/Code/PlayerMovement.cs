@@ -30,16 +30,15 @@ public class PlayerMovement : MonoBehaviour
     public int airjumps = 1;
     
 
-    public Rigidbody2D _rigidbody;
+    private Rigidbody2D _rigidbody;
 
     public bool grounded = false;
     public bool paused = false;
 
 
     AudioSource _audioSource;
-    public AudioClip walkSound;
-    public AudioClip dashSound;
     public AudioClip jumpSound;
+    public float volume = 0.5f;
 
 
 
@@ -48,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
+        _audioSource = gameObject.AddComponent<AudioSource>();
         _rigidbody = GetComponent<Rigidbody2D>();
         //gravityStore = theRB.gravityScale;
         animator.SetBool("alive", true);
@@ -72,7 +71,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButton("Dash"))
         {
             xSpeed *= sprintMultiplier;
-            //_audioSource.PlayOneShot(dashSound, volume);
             animator.SetBool("isRunning", true);
         }
         else
@@ -135,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 animator.SetBool("isJumping", true);
+                _audioSource.PlayOneShot(jumpSound, volume);
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
                 _rigidbody.AddForce(new Vector2(0, jumpForce));
             }
@@ -144,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 animator.SetBool("isJumping", true);
+                _audioSource.PlayOneShot(jumpSound, volume);
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
                 _rigidbody.AddForce(new Vector2(0, jumpForce));
                 airjumps--;

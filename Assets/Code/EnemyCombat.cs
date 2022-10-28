@@ -10,8 +10,14 @@ public class EnemyCombat : MonoBehaviour
     public bool enemyFacingRight = false;
     public Vector2 playerDirection;
 
+    AudioSource _audioSource;
+    public AudioClip hurtSound;
+    public AudioClip deathSound;
+    public float volume = 0.5f;
+
     void Start()
     {
+        _audioSource = gameObject.AddComponent<AudioSource>();
         animator.SetBool("alive", true);
     }
 
@@ -54,13 +60,25 @@ public class EnemyCombat : MonoBehaviour
     public void TakeMeleeDamage()
     {
         animator.SetTrigger("hurt");
-        health -= 10;
+        health -= 15;
+        if(health < 1){
+            _audioSource.PlayOneShot(hurtSound, volume);
+        }
+        else{
+            _audioSource.PlayOneShot(deathSound, volume);
+        }
     }
 
     public void TakeRangedDamage()
     {
         animator.SetTrigger("hurt");
         health -= 5;
+        if(health < 1){
+            _audioSource.PlayOneShot(hurtSound, volume);
+        }
+        else{
+            _audioSource.PlayOneShot(deathSound, volume);
+        }
     }
 
     void Flip()

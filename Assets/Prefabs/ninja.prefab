@@ -184,11 +184,12 @@ MonoBehaviour:
   animator: {fileID: 1937793529576467611}
   speed: 5
   sprintMultiplier: 2
-  jumpForce: 700
+  jumpForce: 900
   airjumps: 1
-  _rigidbody: {fileID: 0}
   grounded: 0
   paused: 0
+  jumpSound: {fileID: 8300000, guid: d466e18c02f7ded498202236499399e6, type: 3}
+  volume: 0.5
 --- !u!114 &1661285502692705578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +211,10 @@ MonoBehaviour:
   animator: {fileID: 1937793529576467611}
   Stars: {fileID: 2416402079687922152, guid: bee84f34b29ed6a48b300f9fc3594d86, type: 3}
   healthBar: {fileID: 0}
+  swordSound: {fileID: 8300000, guid: fdfb0464287266145ba79ea4bbc65225, type: 3}
+  hurtSound: {fileID: 8300000, guid: bf1a8e1d48d22bb43b082b1450dfa316, type: 3}
+  deflectSound: {fileID: 8300000, guid: f91a48cfa8fdff248b7f3400710b6ac4, type: 3}
+  volume: 0.5
 --- !u!114 &1661285502692705579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +229,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Score: {fileID: 0}
   Stars: {fileID: 0}
+  collectStarSound: {fileID: 8300000, guid: 9a69c5a259797e749b9875d39887654a, type: 3}
+  collectCoinSound: {fileID: 8300000, guid: 6086ebf2305f7b047b5d95437912e67b, type: 3}
+  volume: 0.5
 --- !u!95 &1937793529576467611
 Animator:
   serializedVersion: 4
