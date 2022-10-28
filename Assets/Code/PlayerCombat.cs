@@ -126,7 +126,7 @@ public class PlayerCombat : MonoBehaviour
         animator.SetBool("isJumping", false);
         animator.SetBool("alive", false);
         _rigidbody.isKinematic = true;
-        _rigidbody.velocity = new Vector2(0, 0);
+        _rigidbody.velocity = new Vector2(0, -5);
         yield return new WaitForSeconds(2f);
 
 
