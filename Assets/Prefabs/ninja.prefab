@@ -214,6 +214,7 @@ MonoBehaviour:
   swordSound: {fileID: 8300000, guid: fdfb0464287266145ba79ea4bbc65225, type: 3}
   hurtSound: {fileID: 8300000, guid: bf1a8e1d48d22bb43b082b1450dfa316, type: 3}
   deflectSound: {fileID: 8300000, guid: f91a48cfa8fdff248b7f3400710b6ac4, type: 3}
+  deathSound: {fileID: 8300000, guid: ebd6c90c95ba41345b4a2f744b2e9d61, type: 3}
   volume: 0.5
 --- !u!114 &1661285502692705579
 MonoBehaviour:
