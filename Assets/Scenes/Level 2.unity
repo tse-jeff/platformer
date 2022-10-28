@@ -1962,6 +1962,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1862949578}
     - target: {fileID: 1661285502692705579, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
+      propertyPath: Lives
+      value: 
+      objectReference: {fileID: 1617276223}
+    - target: {fileID: 1661285502692705579, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
       propertyPath: Score
       value: 
       objectReference: {fileID: 1228344016}
@@ -3965,6 +3969,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6016036679971048983, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
   m_PrefabInstance: {fileID: 1617276221}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1617276223 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6309986522530133364, guid: 15dc4c1eac4760641aa366e2e0bf7eb6, type: 3}
+  m_PrefabInstance: {fileID: 1617276221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1623639460 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1661285502692705577, guid: 25d69a8534389f746820749c7de05ec1, type: 3}
