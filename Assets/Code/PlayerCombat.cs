@@ -23,11 +23,15 @@ public class PlayerCombat : MonoBehaviour
     public AudioClip swordSound;
     public AudioClip hurtSound;
     public AudioClip deflectSound;
+    public AudioClip deathSound;
     public float volume = 0.5f;
+
+    private Rigidbody2D _rigidbody;
 
     private void Start()
     {
         _audioSource = gameObject.AddComponent<AudioSource>();
+        _rigidbody = gameObject.GetComponent<Rigidbody2D>();
         healthBar.value = 1;
     }
 
@@ -41,15 +45,11 @@ public class PlayerCombat : MonoBehaviour
         // death
         if (PublicVars.playerHealth < 1)
         {
-            StartCoroutine(Death());
-            Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
-            PublicVars.playerHealth = 3;
-            animator.SetBool("alive", true);
-            PublicVars.facingRight = true;
-            PublicVars.stars = PublicVars.prevStars;
-            PublicVars.score = PublicVars.prevScore;
-
+            if(gameObject.tag != "Dead"){
+                _audioSource.PlayOneShot(deathSound, volume);
+                gameObject.tag = "Dead";
+                StartCoroutine(Death());
+            }
         }
 
         //Left click
@@ -121,8 +121,21 @@ public class PlayerCombat : MonoBehaviour
 
     IEnumerator Death()
     {
+        Destroy(GetComponent<PlayerMovement>());
+        animator.SetBool("isJumping", false);
         animator.SetBool("alive", false);
-        yield return new WaitForSeconds(1f);
+        _rigidbody.isKinematic = true;
+        _rigidbody.velocity = new Vector2(0, 0);
+        yield return new WaitForSeconds(2f);
+
+
+        //Reload Scene
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+        PublicVars.playerHealth = 3;
+        PublicVars.facingRight = true;
+        PublicVars.stars = PublicVars.prevStars;
+        PublicVars.score = PublicVars.prevScore;
     }
 
     void Flip()

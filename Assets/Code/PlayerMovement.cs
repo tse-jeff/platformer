@@ -143,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Jump"))
             {
                 animator.SetBool("isJumping", true);
-                _audioSource.PlayOneShot(jumpSound, volume+0.5f);
+                _audioSource.PlayOneShot(jumpSound, volume+0.3f);
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
                 _rigidbody.AddForce(new Vector2(0, jumpForce));
                 airjumps--;
