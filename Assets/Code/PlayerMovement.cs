@@ -50,9 +50,8 @@ public class PlayerMovement : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        //gravityStore = theRB.gravityScale;  
-        HurtAnimation(gameObject);
-
+        //gravityStore = theRB.gravityScale;
+        animator.SetBool("alive", true);
 
     }
 
@@ -91,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         }
 
-        // Wall Jumping
+        // Determines if player character is facing the right direction
         if (isFacingRight)
         {
             WallCheckHit = Physics2D.Raycast(transform.position, new Vector2(wallDistance, 0), wallDistance, groundLayer);
@@ -100,8 +99,8 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             WallCheckHit = Physics2D.Raycast(transform.position, new Vector2(-wallDistance, 0), wallDistance, groundLayer);
-      
         }
+
 
         if (WallCheckHit && !grounded && xSpeed != 0)
         {
@@ -112,9 +111,17 @@ public class PlayerMovement : MonoBehaviour
             isWallSliding = false;
         }
 
+
+        // Checks to see if ninja is sliding on wall, if it is performs sliding animation
         if (isWallSliding)
         {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, Mathf.Clamp(_rigidbody.velocity.y, wallSlideSpeed, float.MaxValue));
+            animator.SetBool("isOnWall", true);
+            Flip();
+        }
+        else
+        {
+            animator.SetBool("isOnWall", false);
         }
     }
 
@@ -157,6 +164,7 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    // Flips character model, helps with fixing animation issues
     void Flip()
     {
         Vector3 currDirection = gameObject.transform.localScale;
@@ -165,17 +173,20 @@ public class PlayerMovement : MonoBehaviour
         PublicVars.facingRight = !PublicVars.facingRight;
     }
 
+    // Plays hurt animation 
     public void HurtAnimation(GameObject enemy) {
         animator.SetTrigger("hurt");
     }
 
+
+    // Pauses game 
     public void PauseGame()
-    { 
-        
+    {     
         Time.timeScale = 0;
         pauseMenuScreen.SetActive(true);
     }
 
+    // Resumes game
     public void ResumeGame()
     {
         Time.timeScale = 1;
@@ -183,6 +194,7 @@ public class PlayerMovement : MonoBehaviour
         paused = false;
     }
 
+    // Returns player to main menu
     public void GoToMenu()
     {
         SceneManager.LoadScene("MainMenu");

@@ -36,11 +36,14 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
+        // death
         if (PublicVars.playerHealth < 1)
         {
+            StartCoroutine(Death());
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
             PublicVars.playerHealth = 3;
+            animator.SetBool("alive", true);
             PublicVars.facingRight = true;
             PublicVars.stars = 3;
 
@@ -110,6 +113,12 @@ public class PlayerCombat : MonoBehaviour
         animator.SetTrigger("hurt");
         PublicVars.playerHealth -= 1;
         SetHealth(PublicVars.playerHealth);
+    }
+
+    IEnumerator Death()
+    {
+        animator.SetBool("alive", false);
+        yield return new WaitForSeconds(1f);
     }
 
     void Flip()
