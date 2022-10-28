@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Samurai (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 431143199344504458, guid: 9dbd5cfbdb65d1a4d9bbd7b65a80903f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066851764}
     - target: {fileID: 431143199344504459, guid: 9dbd5cfbdb65d1a4d9bbd7b65a80903f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -254,6 +258,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 246542946}
     m_Modifications:
+    - target: {fileID: 4800146612048852360, guid: 427d606fa076acd4b945a5f1a87d18cc, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066851764}
     - target: {fileID: 4800146612048852361, guid: 427d606fa076acd4b945a5f1a87d18cc, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -316,6 +324,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 246542946}
     m_Modifications:
+    - target: {fileID: 4800146612048852360, guid: 427d606fa076acd4b945a5f1a87d18cc, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066851764}
     - target: {fileID: 4800146612048852361, guid: 427d606fa076acd4b945a5f1a87d18cc, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1018,6 +1030,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Samurai
       objectReference: {fileID: 0}
+    - target: {fileID: 431143199344504458, guid: 9dbd5cfbdb65d1a4d9bbd7b65a80903f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066851764}
     - target: {fileID: 431143199344504459, guid: 9dbd5cfbdb65d1a4d9bbd7b65a80903f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3373,6 +3389,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1043957666784665960, guid: 06b7e667156dd8c45bedda868f8b87cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066851764}
     - target: {fileID: 1043957666784665965, guid: 06b7e667156dd8c45bedda868f8b87cf, type: 3}
       propertyPath: m_Name
       value: Dasher (2)
@@ -4087,6 +4107,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1043957666784665960, guid: 06b7e667156dd8c45bedda868f8b87cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066851764}
     - target: {fileID: 1043957666784665965, guid: 06b7e667156dd8c45bedda868f8b87cf, type: 3}
       propertyPath: m_Name
       value: Dasher (5)
@@ -4987,6 +5011,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1043957666784665960, guid: 06b7e667156dd8c45bedda868f8b87cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066851764}
     - target: {fileID: 1043957666784665965, guid: 06b7e667156dd8c45bedda868f8b87cf, type: 3}
       propertyPath: m_Name
       value: Dasher (1)
@@ -5442,6 +5470,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1043957666784665960, guid: 06b7e667156dd8c45bedda868f8b87cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066851764}
     - target: {fileID: 1043957666784665965, guid: 06b7e667156dd8c45bedda868f8b87cf, type: 3}
       propertyPath: m_Name
       value: Dasher (3)
@@ -5998,6 +6030,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 246542946}
     m_Modifications:
+    - target: {fileID: 4800146612048852360, guid: 427d606fa076acd4b945a5f1a87d18cc, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066851764}
     - target: {fileID: 4800146612048852361, guid: 427d606fa076acd4b945a5f1a87d18cc, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -6389,6 +6425,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 246542946}
     m_Modifications:
+    - target: {fileID: 4800146612048852360, guid: 427d606fa076acd4b945a5f1a87d18cc, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066851764}
     - target: {fileID: 4800146612048852361, guid: 427d606fa076acd4b945a5f1a87d18cc, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -7445,6 +7485,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1043957666784665960, guid: 06b7e667156dd8c45bedda868f8b87cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066851764}
     - target: {fileID: 1043957666784665965, guid: 06b7e667156dd8c45bedda868f8b87cf, type: 3}
       propertyPath: m_Name
       value: Dasher (4)
@@ -9148,6 +9192,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 246542946}
     m_Modifications:
+    - target: {fileID: 4800146612048852360, guid: 427d606fa076acd4b945a5f1a87d18cc, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066851764}
     - target: {fileID: 4800146612048852361, guid: 427d606fa076acd4b945a5f1a87d18cc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -9215,6 +9263,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 246542946}
     m_Modifications:
+    - target: {fileID: 4800146612048852360, guid: 427d606fa076acd4b945a5f1a87d18cc, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066851764}
     - target: {fileID: 4800146612048852361, guid: 427d606fa076acd4b945a5f1a87d18cc, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -10486,6 +10538,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1043957666784665960, guid: 06b7e667156dd8c45bedda868f8b87cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066851764}
     - target: {fileID: 1043957666784665965, guid: 06b7e667156dd8c45bedda868f8b87cf, type: 3}
       propertyPath: m_Name
       value: Dasher (6)
@@ -10703,6 +10759,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1043957666784665960, guid: 06b7e667156dd8c45bedda868f8b87cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1066851764}
     - target: {fileID: 1043957666784665965, guid: 06b7e667156dd8c45bedda868f8b87cf, type: 3}
       propertyPath: m_Name
       value: Dasher
