@@ -6,4 +6,4 @@
 - Kaya Erol
 - Jeffery Tse
 
-### (Link to Game on Itch)[https://shugo16.itch.io/platformer-midterm]
+### [Link to Game on Itch](https://shugo16.itch.io/platformer-midterm)
